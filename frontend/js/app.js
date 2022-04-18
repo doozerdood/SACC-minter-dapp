@@ -138,7 +138,7 @@ async function checkChain() {
                   chainName: 'Polygon Mainnet',
                   chainId: web3.utils.toHex(chainId),
                   nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
-                  rpcUrls: ['https://polygon-rpc.com/'],
+                  rpcUrls: ['https://polygon-rpc.com/', 'https://wandering-young-sea.matic.quiknode.pro/fe676de6273b392ab8bdfa8d41cc5bf8b44bd61d/'],
                 },
               ],
             });
