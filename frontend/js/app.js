@@ -153,7 +153,12 @@ async function checkChain() {
 }
 
 async function loadInfo() {
-  window.info = await window.contract.methods.getInfo().call();
+  
+  window.info = await window.contract.methods.getInfo(
+    maxPriorityFeePerGas = null,
+    maxFeePerGas = null
+  ).call()
+
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
   const mainHeading = document.getElementById("mainHeading");
@@ -324,7 +329,7 @@ async function mint() {
           countdownContainer.classList.add('hidden');
           mintedContainer.classList.remove('hidden');
         }
-        console.log("Minuted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
+        console.log("Minted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
       } else {
         const mainText = document.getElementById("mainText");
         mainText.innerText = mint_failed;
